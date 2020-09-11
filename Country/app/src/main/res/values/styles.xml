@@ -1,0 +1,38 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="SeacrhEditText">
+        <item name="android:drawableRight">@drawable/search_icon</item>
+        <item name="android:hint">@string/search_hint</item>
+        <item name="android:background">@drawable/search_box</item>
+        <item name="android:paddingRight">@dimen/search_bar_dimens</item>
+        <item name="android:layout_marginTop">@dimen/search_bar_dimens</item>
+        <item name="android:paddingLeft">@dimen/search_bar_dimens</item>
+        <item name="android:layout_marginLeft">@dimen/search_bar_dimens</item>
+        <item name="android:layout_marginBottom">@dimen/search_bar_dimens</item>
+    </style>
+    <style name="Button_style">
+        <item name="android:layout_width">@dimen/button_width</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:background">@drawable/grid_button</item>
+        <item name="android:layout_marginTop">@dimen/button_margin_top</item>
+    </style>
+    <style name="Country_TextView">
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/averia_serif_libre_light</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+    <style name="Country_name__TextView">
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/averia_serif_libre_light</item>
+        <item name="android:textSize">@dimen/countery_text_size</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+</resources>

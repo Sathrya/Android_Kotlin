@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cardview_height">400dp</dimen>
+    <dimen name="cardview_radius">5dp</dimen>
+    <dimen name="cardElevation">3dp</dimen>
+    <dimen name="TGBTN_width">51dp</dimen>
+    <dimen name="TGBTN_height">37dp</dimen>
+    <dimen name="IMG_height">138dp</dimen>
+    <dimen name="IMG_width">246dp</dimen>
+    <dimen name="IMG_marginTop">28dp</dimen>
+    <dimen name="button_elevation">2dp</dimen>
+    <dimen name="IMGBTN_LIST_Margin">20dp</dimen>
+    <dimen name="Details_box_consLayout_Height">190dp</dimen>
+    <dimen name="Details_box_consLayout_Margintop">16dp</dimen>
+    <dimen name="Linear_Details_width">212dp</dimen>
+    <dimen name="Linear_Details_height">198dp</dimen>
+    <dimen name="countryname_text_size">20sp</dimen>
+    <dimen name="countryname_lMargin">8dp</dimen>
+    <dimen name="search_bar_dimens">7dp</dimen>
+    <dimen name="button_width">35dp</dimen>
+    <dimen name="button_height">40dp</dimen>
+    <dimen name="button_margin_top">5dp</dimen>
+
+</resources>

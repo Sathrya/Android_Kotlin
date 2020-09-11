@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Countries Repo</string>
+    <string name="Search_icon">Search</string>
+    <string name="capital">Capital:</string>
+    <string name="TelPrefix">TEl Prefix:</string>
+    <string name="Code_iso_2">Code ISO 2:</string>
+    <string name="Code_iso_3">Code ISO 3:</string>
+    <string name="center">Center:</string>
+    <string name="CodeISONUM">Code ISO Num:</string>
+    <string name="rectangle">Rectangle:</string>
+    <string name="CodeFIPS">Code FIPS:</string>
+    <string name="search_hint">Search your desired destination</string>
+</resources>

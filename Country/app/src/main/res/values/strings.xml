@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Travel Around the World</string>
+    <string name="Search_bar">Search</string>
+    <string name="capital">Capital:</string>
+    <string name="Search_icon">Search</string>
+    <string name="search_hint">Search your desired destination</string>
+</resources>
