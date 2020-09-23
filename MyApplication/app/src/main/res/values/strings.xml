@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="Name">Name:</string>
+    <string name="Id">User ID:</string>
+    <string name="Status">Status:</string>
+    <string name="Gender">Gender:</string>
+    <string name="Update">Updated At:</string>
+    <string name="Create">Created At:</string>
+</resources>
