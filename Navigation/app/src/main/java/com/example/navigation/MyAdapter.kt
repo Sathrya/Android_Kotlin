@@ -3,17 +3,25 @@ package com.example.navigation
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.example.navigation.model.ApiInterface
 import com.example.navigation.model.Data
+import com.example.navigation.model.RetroFitInstance
+import com.example.navigation.model.Users
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class MyAdapter(): RecyclerView.Adapter<MyAdapter.UserHolder>() {
@@ -31,7 +39,7 @@ class MyAdapter(): RecyclerView.Adapter<MyAdapter.UserHolder>() {
         var update=itemView.findViewById<TextView>(R.id.updatedAt)
         val image=itemView.findViewById<ImageView>(R.id.icon)
         var card=itemView.findViewById<CardView>(R.id.user_card)
-        var delete=itemView.findViewWithTag<ImageButton>(R.id.delete)
+        var delete=itemView.findViewById<ImageButton>(R.id.delete)
 
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserHolder {
@@ -64,37 +72,55 @@ class MyAdapter(): RecyclerView.Adapter<MyAdapter.UserHolder>() {
             val cemail:String=userList[position].email
             val cgender:String=userList[position].gender
             val cstatus:String=userList[position].status
-            val uid: String =userList[position].id.toString()
-            val action=MainFragmentDirections.Cardtodetail(cname,cemail,cgender,cstatus)
+            val uid: Int =userList[position].id
+            val action=MainFragmentDirections.Cardtodetail(cname,cemail,cgender,cstatus,uid)
             Navigation.findNavController(view).navigate(action)
-           /* val bundle = Bundle()
-            bundle.putInt("id",uid)
-            bundle.putString("name",cname)
-            bundle.putString("email",cemail)
-            bundle.putString("gender",cgender)
-            bundle.putString("status",cstatus)
-            val intent = Intent(mcontext, CardActivity::class.java)
-            intent.putExtras(bundle)
-            startActivity(mcontext, intent, null)*/
         }
-        /* holder.delete.setOnClickListener {
-            // userList.(position)
-             val service: ApiInterface = RetroFitInstance().getRetrofitInstance().create(ApiInterface::class.java)
-             val call: Call<Unit> = service.deleteuser(position)
-             call.enqueue(object :Callback<Unit>{
-                 override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
-                    if(response.isSuccessful){
-                        Toast.makeText(mcontext,"Status:${response.code()},User Deleted Successfully",Toast.LENGTH_SHORT).show()
+        try {
+            //Invoking DELETE request
+            holder.delete.setOnClickListener {
+                // userList.(position)
+                Log.d("Button","Button clicked")
+                val service: ApiInterface = RetroFitInstance().getRetrofitInstance().create(ApiInterface::class.java)
+                val call: Call<Unit> = service.deleteuser(userList[position].id)
+                call.enqueue(object : Callback<Unit> {
+                    override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                        if(response.isSuccessful){
+                            Toast.makeText(mcontext,"Status:${response.code()},User Deleted Successfully",Toast.LENGTH_SHORT).show()
+                            Log.d("Delete","${response}")
+                            val server: ApiInterface = RetroFitInstance().getRetrofitInstance().create(ApiInterface::class.java)
+                            val getcall: Call<Users> = service.getUserData()
+                            getcall.enqueue(object : Callback<Users> {
+                                override fun onResponse(call: Call<Users>, response: Response<Users>) {
+                                    Log.d("Repo", "${ response.code()}")
+                                    if(response.isSuccessful)
+                                    {
+                                        setusers(response.body()!!.data)
+                                    }
+                                    else{
+                                        Log.d("Application", "404 Not found")
+                                    }
+
+                                }
+                                override fun onFailure(call: Call<Users>, t: Throwable) {
+                                    Log.d("Application", "${t}")
+                                }
+                            })
+                        }
                     }
-                 }
 
-                 override fun onFailure(call: Call<Unit>, t: Throwable) {
-                     Log.d("Remove","Network")
-                 }
+                    override fun onFailure(call: Call<Unit>, t: Throwable) {
+                        Log.d("Remove","Network")
+                    }
 
-             })
-             notifyDataSetChanged()
-         }*/
+                })
+                notifyDataSetChanged()
+            }
+        }
+       catch (e:NullPointerException){
+           Log.d("Delete","${e}")
+       }
+
     }
     fun setusers(userList: List<Data>){
         this.userList = userList

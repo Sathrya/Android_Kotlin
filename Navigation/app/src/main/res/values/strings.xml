@@ -10,4 +10,5 @@
     <string name="icon">User-Icon</string>
     <string name="Card_header_Text">Edit the fields you require</string>
     <string name="Submit">Submit</string>
+    <string name="detailFragment">User Details</string>
 </resources>

@@ -8,17 +8,16 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.navigation.MainFragment"
-        android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/Cardtodetail"
             app:destination="@id/detailFragment"
-            />
+            app:popUpTo="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
+        android:label="@string/detailFrgament"
         android:name="com.example.navigation.DetailFragment"
-        android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
         <action
             android:id="@+id/detailtocard"
@@ -32,5 +31,8 @@
             android:name="gender"
             app:argType="string" />
         <argument android:name="status" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
 </navigation>
