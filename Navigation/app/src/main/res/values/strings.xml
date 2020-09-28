@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Example</string>
+    <string name="Name">Name:</string>
+    <string name="Id">User ID:</string>
+    <string name="Status">Status:</string>
+    <string name="Gender">Gender:</string>
+    <string name="Email">Email:</string>
+    <string name="Update">Updated At:</string>
+    <string name="Create">Created At:</string>
+    <string name="icon">User-Icon</string>
+    <string name="Card_header_Text">Edit the fields you require</string>
+    <string name="Submit">Submit</string>
+</resources>

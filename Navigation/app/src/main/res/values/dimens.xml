@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="ImgTopMargin">8dp</dimen>
+    <dimen name="textsize">12sp</dimen>
+    <dimen name="CardRadius">10dp</dimen>
+    <dimen name="cardTopmargin">5dp</dimen>
+    <dimen name="CardBottomMargin">5dp</dimen>
+    <dimen name="CardElevation">5dp</dimen>
+    <dimen name="textTopMargin">4dp</dimen>
+    <dimen name="editbox_topMargin">5dp</dimen>
+    <dimen name="field_topMargin">5dp</dimen>
+    <dimen name="cardTextview">16sp</dimen>
+    <dimen name="Card_header_Text_topMargin">10dp</dimen>
+    <dimen name="Card_header_Text_size">16sp</dimen>
+</resources>

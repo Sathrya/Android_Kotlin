@@ -1,0 +1,36 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="TextViewStyle">
+        <item name="android:layout_marginTop">@dimen/textTopMargin</item>
+        <item name="android:textColor">@color/datacolor</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/textsize</item>
+    </style>
+    <style name="Editbox">
+        <item name="android:layout_marginTop">@dimen/editbox_topMargin</item>
+        <item name="android:background">@drawable/editbox</item>
+    </style>
+    <style name="Card_TextView">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/cardTextview</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginTop">@dimen/field_topMargin</item>
+    </style>
+    <style name="Card_header_Text">
+        <item name="android:layout_marginTop">@dimen/Card_header_Text_topMargin</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/Card_header_Text_size</item>
+    </style>
+    <style name="Button">
+        <item name="android:background">@drawable/button</item>
+        <item name="android:layout_marginTop">@dimen/Card_header_Text_topMargin</item>
+    </style>
+
+</resources>
