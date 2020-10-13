@@ -7,8 +7,13 @@ interface ApiInterface {
 
     @GET("/public-api/users")
     fun getUserData(): Call<Users>
-   /* @POST("/public-api/users")
-    fun postUserData(@Body userpost: UsersPost):Call<UsersPost>*/
+
+   /* @FormUrlEncoded
+    @POST("/public-api/users")
+    fun postUserData(@Field("name")name:String,
+                     @Field("email")email:String,
+                     @Field("gender")gender:String,
+                     @Field("status")status:String):Call<Users>*/
 
     @Headers("Content-Type: application/json;charset=UTF-8")
     @PATCH("/public-api/users/{id}")

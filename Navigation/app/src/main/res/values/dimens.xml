@@ -12,4 +12,10 @@
     <dimen name="cardTextview">16sp</dimen>
     <dimen name="Card_header_Text_topMargin">10dp</dimen>
     <dimen name="Card_header_Text_size">16sp</dimen>
+    <dimen name="LoginLRmargin">15dp</dimen>
+    <dimen name="Login_main_Tmargin">60dp</dimen>
+    <dimen name="Reg_top_margin">40dp</dimen>
+    <dimen name="or_tMargin">30dp</dimen>
+    <dimen name="editbox_padding">10dp</dimen>
+    <dimen name="Login_editbox_tmargin">30dp</dimen>
 </resources>
