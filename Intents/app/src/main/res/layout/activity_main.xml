@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <Button
+        android:id="@+id/shutterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button"
+        style="@style/ShutterButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/photoholder" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/photoholder"
+        app:cardCornerRadius="60dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="120dp"
+        android:layout_height="120dp">
+        <ImageView
+            android:id="@+id/snap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:id="@+id/contents"
+        app:layout_constraintTop_toBottomOf="@id/shutterButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/LinearBoxTmargin"
+        app:layout_constraintRight_toRightOf="parent"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/TextView"
+            android:id="@+id/title_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Name_bar" />
+        <EditText
+            android:inputType="text"
+            android:id="@+id/title"
+            style="@style/Editbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            style="@style/TextView"
+            android:id="@+id/wish_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Wish_bar" />
+        <EditText
+            style="@style/Editbox"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLength="2000"
+            android:maxLines="4"
+            android:id="@+id/wish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/email"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Email_BTn" />
+
+        <Button
+            style="@style/Button"
+            android:id="@+id/share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Share_Btn" />
+
+        <Button
+            style="@style/Button"
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Location_Btn" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

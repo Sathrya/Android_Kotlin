@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BirthDay Card</string>
+    <string name="button">Add image</string>
+    <string name="Email_BTn">Send via Email</string>
+    <string name="Share_Btn">Share via</string>
+    <string name="Location_Btn">Order a birthday Card</string>
+    <string name="Name_bar">Enter your Name:</string>
+    <string name="Wish_bar">Greet Your Friend:</string>
+</resources>
