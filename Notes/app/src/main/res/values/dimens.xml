@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="field_topMargin">5dp</dimen>
+    <dimen name="cardTextview">16sp</dimen>
+    <dimen name="CardCornerRadius">10dp</dimen>
+    <dimen name="CardElevation">10dp</dimen>
+    <dimen name="CardMargin">8dp</dimen>
+    <dimen name="CardLRMArgin">5dp</dimen>
+    <dimen name="TextViewPadding">8dp</dimen>
+    <dimen name="inbtwn_margin">10dp</dimen>
+    <dimen name="Update_Title">24sp</dimen>
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.notes.MainFragment"
+        android:label="Notes"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/main_note"
+            app:destination="@id/noteFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+        <action
+            android:id="@+id/main_add"
+            app:destination="@id/addFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.example.notes.AddFragment"
+        android:label="Add Note"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/add_main"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.example.notes.NoteFragment"
+        android:label="Note"
+        tools:layout="@layout/fragment_note" >
+        <action
+            android:id="@+id/note_main"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/fragment_fade_exit" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument android:name="note"
+            app:argType="string" />
+        <argument android:name="id"
+            app:argType="integer"/>
+    </fragment>
+</navigation>

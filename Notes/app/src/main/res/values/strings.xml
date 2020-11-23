@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Notes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_note">Add notes</string>
+    <string name="title_bar">Enter the title</string>
+    <string name="note_description">Enter note</string>
+    <string name="submit">Submit</string>
+    <string name="Delete">Delete Note</string>
+    <string name="update">Update</string>
+</resources>
