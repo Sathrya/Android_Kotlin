@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/notification_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:src="@drawable/music_note"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/track_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/notification_icon"/>
+
+    <ImageView
+        android:id="@+id/notification_play"
+        android:layout_width="wrap_content"
+        android:src="@drawable/play"
+        app:layout_constraintTop_toBottomOf="@+id/track_name"
+        app:layout_constraintLeft_toRightOf="@id/notification_prev"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:src="@drawable/next"
+        android:id="@+id/notification_next"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/track_name"
+        app:layout_constraintLeft_toRightOf="@id/notification_play"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:src="@drawable/previous"
+        android:id="@+id/notification_prev"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/track_name"
+        app:layout_constraintLeft_toRightOf="@id/notification_icon"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/songCard"
+    app:cardElevation="@dimen/CardElevation"
+    android:layout_height="wrap_content"
+    android:backgroundTint="#a8e063"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/song_icon"
+            android:layout_width="@dimen/icon_width"
+            android:layout_height="@dimen/icon_height"
+            android:src="@drawable/songlogo"
+            android:layout_marginTop="@dimen/icon_TMargin"
+            android:layout_marginBottom="@dimen/icon_BMargin"
+            android:layout_marginLeft="@dimen/icon_TMargin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/song_name"
+            style="@style/Song_name"
+            app:layout_constraintLeft_toRightOf="@+id/song_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/song_artist"
+            style="@style/Song_artist"
+            app:layout_constraintLeft_toRightOf="@+id/song_icon"
+            app:layout_constraintTop_toBottomOf="@+id/song_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="icon_width">78dp</dimen>
+    <dimen name="icon_height">63dp</dimen>
+    <dimen name="icon_TMargin">4dp</dimen>
+    <dimen name="icon_BMargin">4dp</dimen>
+    <dimen name="textviewMargin">5dp</dimen>
+    <dimen name="songNAme">16dp</dimen>
+    <dimen name="songArtist">13dp</dimen>
+    <dimen name="CardRadius">10dp</dimen>
+    <dimen name="CardElevation">5dp</dimen>
+</resources>
