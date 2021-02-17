@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">VideoApp</string>
+    <string name="select_file">Select Video</string>
+    <string name="image_button_desc">This is the play and pause button for the video player.</string>
+    <string name="default_value">00:00</string>
+    <string name="default_text">Select a video from gallery</string>
+</resources>
