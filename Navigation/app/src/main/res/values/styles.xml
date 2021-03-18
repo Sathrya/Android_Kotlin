@@ -2,13 +2,15 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
     <style name="TextViewStyle">
         <item name="android:layout_marginTop">@dimen/textTopMargin</item>
-        <item name="android:textColor">@color/datacolor</item>
+        <item name="android:textColor">@color/black</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/textsize</item>
     </style>
@@ -31,25 +33,6 @@
     <style name="Button">
         <item name="android:background">@drawable/button</item>
         <item name="android:layout_marginTop">@dimen/Card_header_Text_topMargin</item>
-    </style>
-    <style name="LoginScreen_Login_Editbox">
-        <item name="android:paddingLeft">@dimen/editbox_padding</item>
-        <item name="android:layout_marginLeft">@dimen/LoginLRmargin</item>
-        <item name="android:layout_marginRight">@dimen/LoginLRmargin</item>
-        <item name="android:textSize">20sp</item>
-         <item name="android:layout_marginTop">@dimen/Login_editbox_tmargin</item>
-    </style>
-    <style name="LoginScreen_Reg_Editbox">
-        <item name="android:paddingLeft">@dimen/editbox_padding</item>
-        <item name="android:layout_marginLeft">@dimen/LoginLRmargin</item>
-        <item name="android:layout_marginRight">@dimen/LoginLRmargin</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:layout_marginTop">@dimen/Login_editbox_tmargin</item>
-        <item name="android:background">@drawable/editbox</item>
-    </style>
-    <style name="Login_Btn">
-        <item name="android:background">@drawable/button</item>
-        <item name="android:layout_marginTop">20dp</item>
     </style>
 
 </resources>

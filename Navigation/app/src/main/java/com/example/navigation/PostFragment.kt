@@ -1,58 +1,53 @@
 package com.example.navigation
 
 import android.os.Bundle
-import android.text.TextUtils
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import com.example.navigation.database.UserViewModel
-import com.example.navigation.model.UsersInfo
-import kotlinx.android.synthetic.main.fragment_post.view.*
-
+import com.example.navigation.databinding.FragmentPostBinding
+import com.example.navigation.model.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class PostFragment : Fragment() {
+    private var binding:FragmentPostBinding?=null
 
-    private lateinit var mUserViewModel: UserViewModel
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        val view=inflater.inflate(R.layout.fragment_post, container, false)
-        mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
-        view.cancelBtn.setOnClickListener{
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding= FragmentPostBinding.inflate(inflater,container,false)
+        val view= binding!!.root
+        binding!!.cancelbtn.setOnClickListener{ Navigation.findNavController(view).navigate(R.id.action_postFragment_to_mainFragment)}
+
+        binding!!.submitbtn.setOnClickListener {
+
+            val newName=binding!!.newname.text.toString()
+            val newEmail=binding!!.newemail.text.toString()
+            val newGender=binding!!.newgender.text.toString()
+            val newStatus=binding!!.newstatus.text.toString()
+            val service: ApiInterface = RetroFitInstance().getRetrofitInstance().create(ApiInterface::class.java)
+            val postcall: Call<Users> = service.postUserData(newName,newEmail,newGender,newStatus)
+
+            postcall.enqueue(object :Callback<Users>{
+                override fun onResponse(call: Call<Users>, response: Response<Users>) {
+                    if (response.isSuccessful){
+                        Log.d("Submit","Buton Clicked")
+                        Log.d("tag","$response")
+                    }
+                }
+
+                override fun onFailure(call: Call<Users>, t: Throwable) {
+                    Log.d("FAilure","Oops")
+                }
+
+            })
             Navigation.findNavController(view).navigate(R.id.action_postFragment_to_mainFragment)
         }
-        view.submitbtn.setOnClickListener {
-            val newFName=view.fname.text.toString()
-            val newLname=view.lname.text.toString()
-            val newEmail=view.newemail.text.toString()
-            val newGender=view.newgender.text.toString()
-            val newStatus=view.newstatus.text.toString()
-            insertDataToDatabase(view,newFName,newLname,newEmail,newGender,newStatus)
-    }
-
-        //Deleting User
         return view
-    }
-
-    //Insertion Into User Db
-    private fun insertDataToDatabase(view: View,fname:String,lname:String,email:String,gen:String,stat:String){
-        if(validInput(fname,lname,email,gen,stat)){
-            val user= UsersInfo(0,fname,lname,email,gen,stat)
-            mUserViewModel.addUser(user)
-            Navigation.findNavController(view).navigate(R.id.action_postFragment_to_mainFragment)
-            Toast.makeText(requireContext(), "User Registered Sucessfully", Toast.LENGTH_LONG).show()
-
-        }
-        else{
-            Toast.makeText(requireContext(), "None of the fields can be empty", Toast.LENGTH_LONG).show()
-        }
-    }
-
-    //Validating the Inputs
-    private fun validInput(fname:String,lname:String,email:String,gen:String,stat:String):Boolean{
-        return !(TextUtils.isEmpty(fname)&&TextUtils.isEmpty(lname)&&TextUtils.isEmpty(email)&&TextUtils.isEmpty(gen)&&TextUtils.isEmpty(stat))
     }
 }
