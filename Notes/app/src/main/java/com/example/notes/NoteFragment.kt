@@ -10,13 +10,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.example.notes.database.NotesViewModel
-import com.example.notes.databinding.FragmentAddBinding
 import com.example.notes.databinding.FragmentNoteBinding
-import com.example.notes.model.model
-
+import com.example.notes.model.Model
 
 class NoteFragment : Fragment() {
-    lateinit var mNotesViewModel: NotesViewModel
+    private lateinit var mNotesViewModel: NotesViewModel
     private val args: NoteFragmentArgs by navArgs()
     private var _binding: FragmentNoteBinding?=null
     private val binding get() = _binding!!
@@ -24,7 +22,7 @@ class NoteFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding= FragmentNoteBinding.inflate(inflater,container,false)
         val view=binding.root
         mNotesViewModel=ViewModelProvider(this).get(NotesViewModel::class.java)
@@ -45,7 +43,7 @@ class NoteFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
        if(item.itemId==R.id.delete){
-            val deleteNote=model(args.id,args.title,args.note)
+            val deleteNote= Model(args.id,args.title,args.note)
             val builder= AlertDialog.Builder(requireContext())
             builder.setPositiveButton("Yes"){
                     _,_->mNotesViewModel.deleteNote(deleteNote)
@@ -59,7 +57,7 @@ class NoteFragment : Fragment() {
         }
         else if(item.itemId==R.id.update){
             val updatedNote=binding.noteText.text.toString()
-            val update=model(args.id,args.title,updatedNote)
+            val update=Model(args.id,args.title,updatedNote)
             mNotesViewModel.viewNote(update)
            Toast.makeText(requireContext(), "Note Updated ", Toast.LENGTH_LONG).show()
            view?.let { Navigation.findNavController(it).navigate(R.id.note_main) }

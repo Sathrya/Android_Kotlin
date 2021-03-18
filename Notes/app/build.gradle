@@ -11,6 +11,7 @@ android {
     buildToolsVersion "30.0.1"
 
     buildFeatures{
+        dataBinding true
         viewBinding true
     }
 
