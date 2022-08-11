@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/adapterCard"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:cardBackgroundColor="@color/restCardColor"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/restID"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            style="@style/restTextview"/>
+
+        <TextView
+
+            android:id="@+id/name"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/restID"
+            app:layout_constraintLeft_toLeftOf="parent"
+            style="@style/restTextview"
+            />
+
+        <TextView
+            android:text="@string/cuisine"
+            android:id="@+id/cuisineType"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            app:layout_constraintLeft_toLeftOf="parent"
+            style="@style/restTextview"/>
+
+        <TextView
+            android:id="@+id/cuisine"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            app:layout_constraintLeft_toRightOf="@id/cuisineType"
+            style="@style/restTextview"/>
+
+        <TextView
+
+            android:text="@string/address"
+            android:id="@+id/restAddress"
+            app:layout_constraintTop_toBottomOf="@id/cuisineType"
+            app:layout_constraintLeft_toLeftOf="parent"
+            style="@style/restTextview"/>
+
+        <TextView
+            android:id="@+id/address"
+            app:layout_constraintTop_toBottomOf="@id/cuisine"
+            app:layout_constraintLeft_toRightOf="@id/restAddress"
+            style="@style/restTextview"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

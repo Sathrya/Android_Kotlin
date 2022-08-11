@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CricbuzzTask</string>
+    <string name="search">Search food/restaurant/cuisine</string>
+    <string name="reviews">Reviews</string>
+    <string name="Reviewer">Name:</string>
+    <string name="rating">Rating:</string>
+    <string name="cuisine">Cuisine:</string>
+    <string name="address">Address:</string>
+    <string name="price">Price :</string>
+</resources>
